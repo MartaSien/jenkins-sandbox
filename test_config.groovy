@@ -4,11 +4,11 @@ pipeline {
         stage('Change config') {
             steps {
                 script {
-                    config = readFile "config.cfg"
+                    def config = readFile "config.cfg"
                     echo "${config}"
-                    newconfig = config.replaceAll("PLACEHOLDER_VALUE", "new_value")
+                    def newconfig = config.replaceAll("PLACEHOLDER_VALUE", "new_value")
                     writeFile file: "config.cfg", text: newconfig
-                    updated_config = readFile "config.cfg"
+                    def updated_config = readFile "config.cfg"
                     echo "${updated_config}"
                 }
             }
