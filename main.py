@@ -1,4 +1,5 @@
-def get_hello():
+def get_hello() -> str:
+    """Return Hello, World! string"""
     return "Hello, World!"
 
 if __name__ == "__main__":
