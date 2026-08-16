@@ -15,7 +15,7 @@ pipeline {
 
         stage('Groovy Lint') {
             steps {
-                sh "npm-groovy-lint --noserver jenkins/*.groovy"
+                sh "npm-groovy-lint --noserver --failon error jenkins/*.groovy"
             }
         }
     }
